@@ -1,0 +1,27 @@
+<div class="col">
+       
+    <h4>Listados</h4>
+    
+    <ul class="list-group d-flex justify-content-between">
+        <li *ngFor="let chatacter of characterList; let i = index; let isFirst =  first ; let isLast = last; let isEven = even"; 
+          [ngClass]="{
+          'list-group-item-sucess': isLast,
+          'list-group-item-warning': isFirst
+        
+        }">
+        <div>
+            <span >{{i+1}}  </span>
+            <span> {{chatacter.name}} </span>
+            <strong>Power: </strong>
+            <span> {{chatacter.power}} </span>
+            <button class="btn btn-danger" (click)="onDeleteCharacter(chatacter.id!     )">X</button>
+
+
+        </div>
+
+         
+
+        </li>
+
+    </ul>
+</div>
